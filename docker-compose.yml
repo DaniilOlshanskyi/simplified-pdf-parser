@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  easyocr-app:
+    build: .
+    container_name: easyocr-simplified
+    volumes:
+      - ./test_pdfs:/app/test_pdfs
+      - ./output:/app/output
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: "no"
